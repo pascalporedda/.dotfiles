@@ -32,9 +32,9 @@ alias showall="defaults write com.apple.finder AppleShowAllFiles YES"
 alias hideall="defaults write com.apple.finder AppleShowAllFiles NO"
 alias vim="nvim"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
+alias envim='nvim ~/.config/nvim/init.vim'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
