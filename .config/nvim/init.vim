@@ -92,8 +92,8 @@ nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 nmap <leader>gs :G<CR>
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gj :diffget //2<CR>
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 " Save a file as root (,W)
