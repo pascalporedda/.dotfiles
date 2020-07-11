@@ -13,8 +13,6 @@ set encoding=utf-8 nobomb
 let mapleader=" "
 " Don’t add empty newlines at the end of files
 set binary
-" Centralize backups, swapfiles and undo history
-
 " Respect modeline in files
 set modeline
 set modelines=4
@@ -29,6 +27,11 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+set softtabstop=2
+set smartindent
+set nowrap
+set smartcase
+set noswapfile
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_,space:·
 set list
@@ -60,9 +63,10 @@ set updatetime=300
 set cmdheight=2
 set nobackup
 set nowritebackup
-
-
-set tabstop=2
+set undodir=~/.vim/undodir
+set undofile
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 set shiftwidth=2
 set expandtab
 set splitbelow
@@ -209,6 +213,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gruvbox-community/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 " end vim-plug section
 set termguicolors     " enable true colors support
