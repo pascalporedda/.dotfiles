@@ -199,6 +199,7 @@ endif
 " vim-plug section
 
 call plug#begin('~/.vim/plugged')
+Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'peitalin/vim-jsx-typescript'
@@ -215,7 +216,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'takac/vim-hardtime'
+" Plug 'takac/vim-hardtime'
+Plug 'skbolton/embark'
+Plug 'mattn/emmet-vim'
 call plug#end()
 " end vim-plug section
 set termguicolors     " enable true colors support
@@ -224,7 +227,10 @@ let g:gruvbox_invert_selection='0'
 
 colorscheme gruvbox
 set background=dark
+" colorscheme embark
 syntax on
+
+let g:user_emmet_leader_key=','
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
