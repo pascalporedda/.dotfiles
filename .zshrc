@@ -7,6 +7,8 @@ fi
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=/usr/local/sbin:$HOME/.composer/vendor/bin:$PATH
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export NVM_LAZY_LOAD=true
 export GPG_TTY=$(tty)
 
@@ -39,4 +41,3 @@ eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"

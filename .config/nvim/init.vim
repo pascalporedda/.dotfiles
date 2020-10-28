@@ -109,7 +109,9 @@ else
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
+" remap weird ctrl + \ and ctrl + n to esc to leave insert mode in terminal
+" mode
+tnoremap <Esc> <C-\><C-n>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -201,7 +203,6 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'posva/vim-vue'
 Plug 'leafgarland/typescript-vim'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -216,18 +217,22 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'takac/vim-hardtime'
 Plug 'skbolton/embark'
 Plug 'mattn/emmet-vim'
 call plug#end()
 " end vim-plug section
 set termguicolors     " enable true colors support
-let g:gruvbox_contrast_hard = 'hard'
-let g:gruvbox_invert_selection='0'
+" let g:gruvbox_contrast_hard = 'hard'
+" let g:gruvbox_invert_selection='0'
 
-colorscheme gruvbox
-set background=dark
-" colorscheme embark
+" colorscheme gruvbox
+" set background=dark
+colorscheme embark
 syntax on
 
 let g:user_emmet_leader_key=','
@@ -250,3 +255,5 @@ let g:loaded_python_provider = 0
 
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
