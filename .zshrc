@@ -39,5 +39,18 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 eval "$(pyenv init -)"
 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
+#     if [[ -z "$TMUX" ]] ;then
+#         ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+#         if [[ -z "$ID" ]] ;then # if not available create a new one
+#             tmux new-session
+#         else
+#             tmux attach-session -t "$ID" # if available attach to it
+#         fi
+#     fi
+# fi
+
